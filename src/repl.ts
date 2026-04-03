@@ -23,9 +23,9 @@ class Spinner {
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = null;
+      // Clear the spinner line
+      process.stdout.write("\r\x1b[K");
     }
-    // Clear the spinner line
-    process.stdout.write("\r\x1b[K");
   }
 
   private render() {
